@@ -106,3 +106,44 @@ class NewsCategory(Model):
     __tablename__ = 'news_category'
     id = Column(Integer, primary_key=True)
     name = Column(String(50), nullable=False)
+
+class GetStarted(Model):
+    __tablename__ = "Get_Started"
+    id = Column(Integer, primary_key=True)
+    title = Column(String(50), nullable=False)
+    content = Column(String(500), nullable=False)
+    Types_of_Learning_center_id = Column(Integer, ForeignKey('Types_of_Learning_center.id'), nullable=False)
+    Types_of_Learning_center = relationship("TypesofLearningcenter")
+
+class LearningMaterials(Model):
+    __tablename__ = "Learning_Materials"
+    id = Column(Integer, primary_key=True)
+    title = Column(String(50), nullable=False)
+    Types_of_Learning_center_id = Column(Integer, ForeignKey('Types_of_Learning_center.id'), nullable=False)
+    Types_of_Learning_center = relationship("TypesofLearningcenter")
+    
+class TypesofLearningcenter(Model):
+    __tablename__ = "Types_of_Learning_center"
+    id = Column(Integer, primary_key=True)
+    title = Column(String(50), nullable=False)
+
+class PopularLearningMaterials(Model):
+    __tablename__ = "Popular_Learning_Materials"
+    id = Column(Integer, primary_key=True)
+    title = Column(String(50), nullable=False)
+    content = Column(String(500), nullable=False)
+    Learn_Xamarin_id = Column(Integer, ForeignKey('Learn_Xamarin.id'), nullable=False)
+    Learn_Xamarin = relationship("LearnXamarin")
+
+class AllLearningMaterials(Model):
+    __tablename__ = " All_Learning_Materials"
+    id = Column(Integer, primary_key=True)
+    title = Column(String(50), nullable=False)
+    content = Column(String(500), nullable=False)
+    Learn_Xamarin_id = Column(Integer, ForeignKey('Learn_Xamarin.id'), nullable=False)
+    Learn_Xamarin = relationship("LearnXamarin")
+
+class LearnXamarin(Model):
+    __tablename__ = "Learn_Xamarin"
+    id = Column(Integer, primary_key=True)
+    title = Column(String(50), nullable=False)

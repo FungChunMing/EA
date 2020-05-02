@@ -1,0 +1,24 @@
+#top .jumbotron{
+    background-color: #7014e8;
+    color: floralwhite;
+}
+
+#top .container {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+header nav img{
+    width: 100;
+}
+
+header a.c-uhf-nav-link{
+    font-size: 15;
+    color: #262626;
+    margin: 10px;
+}
+
+#last{
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
